@@ -7,8 +7,8 @@
                     {{ $post->title }}
                 </a>
             </h1>
-            <h5>{{ $post->author }}</h5>
-            <p>{{ $post->excerp }}</p>
+            <p><strong>By Vixiloc in</strong> <a href="/category/{{ $post->category->name }}">{{ $post->category->name }}</a></p
+            <p>{{ $post->excerpt }}</p>
         </article>
          @endforeach
 @endsection

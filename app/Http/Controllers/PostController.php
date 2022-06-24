@@ -20,7 +20,7 @@ class PostController extends Controller
         //menampilkan detail data 
         // find(), pluck()
         return view('post', [
-            'post' => Post::where('slug','=',$slug)->first(),
+            'post' => Post::with('category')->where('slug','=',$slug)->first(),
             'title' => 'Baca Berita'            
         ]);
     }
