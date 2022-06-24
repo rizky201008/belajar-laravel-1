@@ -15,7 +15,7 @@ class CategoryController extends Controller
         // find(), pluck()
         return view('category', [
             'category' => Category::with('post')->where('slug', '=', $slug)->first(),
-            'title' => 'Baca Berita',
+            'title' => 'Baca Berita'
         ]);
     }
 }
