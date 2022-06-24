@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class PostController extends Controller
 {
@@ -14,12 +16,12 @@ class PostController extends Controller
         ]);
     }
 
-    public function show($id){
+    public function show($slug){
         //menampilkan detail data 
         // find(), pluck()
         return view('post', [
-            'title' => 'Baca Berita',
-            'post' => Post::find($id)
+            'post' => Post::where('slug','=',$slug)->first(),
+            'title' => 'Baca Berita'            
         ]);
     }
 }
