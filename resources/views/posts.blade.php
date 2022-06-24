@@ -1,15 +1,24 @@
 @extends('layout.main')
 @section('content')
+<div class="row justify-content-center">
+    <h1 class="text-center mb-3">Semua Postingan</h1>
         @foreach ($posts as $post)
-        <article class="mt-3 mb-3">
-            <h1>
-                <a href="blog/{{ $post->slug }}">
-                    {{ $post->title }}
-                </a>
-            </h1>
-            <p><strong>By Vixiloc in</strong> <a href="/category/{{ $post->category->name }}">{{ $post->category->name }}</a></p
-            <p>{{ $post->excerpt }}</p>
-        </article>
-    <hr/>
+            <div class="col-md-4">
+                            <div class="card mb-3 mt-2">
+                <img src="{{ $post->image }}" alt="{{ $post->slug }}">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h1>{{ $post->title }}</h1>
+                    </div>
+                    <div class="card-text">
+                        <p>{{ $post->excerpt }}</p>
+                    </div>
+                    <div class="card-link">
+                        <a href="/blog/{{ $post->slug }}"><button class="btn btn-primary">Baca Selengkapnya</button></a>
+                    </div>
+                </div>
+            </div>
+            </div>
          @endforeach
+        </div>
 @endsection

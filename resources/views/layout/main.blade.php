@@ -11,7 +11,7 @@
 
     @include('partial.navbar')
 
-    <div class="container">
+    <div class="container" style="padding-top: 5rem;">
         <div class="row">
             <div class="col-md-12">
                 @yield('content')
