@@ -14,11 +14,12 @@ class PostController extends Controller
         ]);
     }
 
-    public function show($slug){
+    public function show($id){
         //menampilkan detail data 
+        // find(), pluck()
         return view('post', [
             'title' => 'Baca Berita',
-            'post' => Post::find($slug)
+            'post' => Post::find($id)
         ]);
     }
 }
