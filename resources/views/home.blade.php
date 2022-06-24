@@ -2,9 +2,10 @@
 @section('content')
     <div class="row justify-content-center">
         <h1 class="text-center text-dark">Postingan Terbaru</h1>
-        @foreach ($posts as $post)
+        @if ($posts->count())
+            @foreach ($posts as $post)
             <div class="col-md-4">
-            <div class="card mb-3 mt-2">
+            <div class="card mb-3 mt-2 shadow">
                 <img src="{{ $post->image }}" alt="{{ $post->slug }}">
                 <div class="card-body">
                     <div class="card-title">
@@ -20,5 +21,8 @@
             </div>
         </div>
         @endforeach
+        @else
+            <p class="text-center">Not Found!</p>
+        @endif
     </div>
 @endsection
