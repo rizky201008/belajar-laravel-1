@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use App\Models\Category;
@@ -29,3 +30,5 @@ Route::get('/blog/{slug}', [PostController::class, 'show']);
 Route::get('/category', [CategoryController::class, 'index']);
 
 Route::get('/category/{slug}', [CategoryController::class, 'show']);
+
+Route::get('/login', [LoginController::class, 'index']);
