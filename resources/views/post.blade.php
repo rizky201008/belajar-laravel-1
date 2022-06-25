@@ -1,5 +1,5 @@
 {{-- @dd($post) --}}
-@extends('layout.main')
+@extends('layout.post')
 @section('content')
     <article class="mt-3 mb-3">
         <h1>{{ $post->title }}</h1>
