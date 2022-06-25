@@ -10,9 +10,10 @@
         @endphp
 
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-12 mb-3">
+                <a href="/blog/{{ $posts[$index]->slug }}">
                 <div class="card">
-            <img src="{{ $posts[$index]->image }}" alt="">
+            <img src="{{ $posts[$index]->image }}" alt="{{ $posts[$index]->slug }}">
             
             <div class="card-body">
                 <div class="card-title">
@@ -21,6 +22,7 @@
                 <p>{{ $posts[$index]->excerpt }}</p>
             </div>
         </div>
+                </a>
             </div>
         </div>
         
