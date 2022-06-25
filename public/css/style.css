@@ -6,3 +6,6 @@ a:hover {
     text-decoration: none;
     color: red;
 }
+img{
+    max-width: 100%;
+}
