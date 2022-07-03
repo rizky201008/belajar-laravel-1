@@ -15,10 +15,4 @@ class MainController extends Controller
             'posts' => Post::all()->sortDesc()
         ]);
     }
-
-    public function about(){
-        return view('about', [
-            'title' => 'About'
-        ]);
-    }
 }
