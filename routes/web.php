@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\LoginController;
+use App\Models\Posts;
+use App\Models\Category;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
-use App\Models\Category;
-use App\Models\Posts;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,8 @@ Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/category/{slug}', [CategoryController::class, 'show']);
 
 Route::get('/login', [LoginController::class, 'index']);
+
+Route::get('/admin', [AdminController::class, 'index']);
+
+Route::get('/admin/posts', [AdminController::class, 'posts']);
+Route::post('/admin', [AdminController::class, 'store']);
