@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
+use App\Models\Category;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index(){
+    public function create(){
+        $category = Category::all();
         return view('admin.index', [
-            'title' => 'Tulis Artikel'
+            'title' => 'Tulis Artikel',
+            'category' => $category
         ]);
     }
     public function store(Request $request){
@@ -23,5 +26,12 @@ class AdminController extends Controller
         $post->excerpt = $request->ecpt;
         $post->save();
         return back()->with('success', "Selamat Postingan Anda Sudah Di Publikasikan");
+    }
+    public function posts(){
+        $post = Post::all();
+        return view('admin.posts',[
+            'title'=>'Postingan',
+            'post'=>$post
+        ]);
     }
 }

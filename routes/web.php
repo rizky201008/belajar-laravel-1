@@ -32,9 +32,8 @@ Route::get('/category', [CategoryController::class, 'index']);
 
 Route::get('/category/{slug}', [CategoryController::class, 'show']);
 
-Route::get('/login', [LoginController::class, 'index']);
-
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'create']);
 
 Route::get('/admin/posts', [AdminController::class, 'posts']);
+
 Route::post('/admin', [AdminController::class, 'store']);
