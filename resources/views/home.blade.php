@@ -23,7 +23,7 @@
                 </div>
             @endforeach
         @else
-            <p class="text-center">Nothing to show please <a href="/admin">create</a> first</p>
+            <p class="text-center">Nothing to show please <a href="/admin">create post</a> first</p>
         @endif
     </div>
 @endsection
