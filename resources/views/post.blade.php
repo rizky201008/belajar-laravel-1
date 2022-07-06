@@ -2,7 +2,7 @@
 @extends('layout.post')
 @section('title')
     <h1>{{ $post->title }}</h1>
-    <p>By Vixiloc in <a href="/category/{{ $post->category->name }}">{{ $post->category->name }}</a></p>
+    <p>By User in <a href="/category/{{ $post->category->name }}">{{ $post->category->name }}</a></p>
 @endsection
 @section('thumbnail')
     <img class="shadow" src="{{ $post->image }}" alt="{{ $post->slug }}" style="max-width: 100%;">
