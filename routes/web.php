@@ -37,3 +37,9 @@ Route::get('/admin', [AdminController::class, 'create']);
 Route::get('/admin/posts', [AdminController::class, 'posts']);
 
 Route::post('/admin', [AdminController::class, 'store']);
+
+Route::get('/admin/edit/{id}', [AdminController::class, 'edit']);
+
+Route::post('/admin/edit/{id}', [AdminController::class, 'update']);
+
+Route::get('/admin/delete/{id}', [AdminController::class, 'delete']);
