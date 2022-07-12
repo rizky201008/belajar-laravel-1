@@ -11,7 +11,6 @@
                                 <th scope="col">No.</th>
                                 <th scope="col">Judul</th>
                                 <th scope="col">Excerpt</th>
-                                <th scope="col">Isi Postingan</th>
                                 <th scope="col">Kategori</th>
                                 <th scope="col">Aksi</th>
                             </tr>
@@ -25,7 +24,6 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $posts->title }}</td>
                                 <td>{{ $posts->excerpt }}</td>
-                                <td>{!! $posts->body !!}</td>
                                 <td>{{ $posts->category->name }}</td>
                                 <td>
                                         <a href="/admin/edit/{{ $posts->id }}"><button class="btn btn-primary">Edit</button></a>
