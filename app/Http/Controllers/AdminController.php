@@ -6,6 +6,8 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
@@ -62,5 +64,63 @@ class AdminController extends Controller
         $post = Post::find($id);
         $post->delete();
         return redirect('/admin/posts');
+    }
+    public function categories(){
+        $category = Category::all();
+        return view('admin.categories',[
+            'title'=>'Kategori',
+            'category'=>$category
+        ]);
+    }
+    public function cedit($id){
+        $category = Category::find($id);
+        return view('admin.cedit',[
+            'title'=>'Edit Kategori',
+            'category'=>$category
+        ]);
+    }
+    public function cupdate(Request $request, $id){
+        $category = Category::find($id);
+        $category->name = $request['name'];
+        $category->update();
+    }
+    public function cdelete($id){
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('/admin/categories');
+    }
+    public function cadd(){
+        return view('admin.cadd',[
+            'title'=>'Tambah Kategori'
+        ]);
+    }
+    public function cstore(Request $request){
+        $category = new Category;
+        $category->name = $request['name'];
+        $category->save();
+    }
+    public function login(){
+        return view('admin.login',[
+            'title'=>'Login'
+        ]);
+    }
+    public function authenticate(Request $request){
+        $authcred = $request->validate([
+            'email' => 'required|email:dns',
+            'password' => 'required'
+        ]);
+        if (Auth::attempt($authcred)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/admin');
+        }
+
+        return back()->with('error', 'Gagal Login!!!');
+    }
+    public function logout(){
+        Session::flush();
+
+        Auth::logout();
+
+        return redirect('/admin/login');
     }
 }
