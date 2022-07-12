@@ -28,8 +28,8 @@
                                 <td>{!! $posts->body !!}</td>
                                 <td>{{ $posts->category->name }}</td>
                                 <td>
-                                        <a href="/admin/edit"><button class="btn btn-primary">Edit</button></a>
-                                        <a href="/admin/delete"><button class="btn btn-danger">Hapus</button></a>
+                                        <a href="/admin/edit/{{ $posts->id }}"><button class="btn btn-primary">Edit</button></a>
+                                        <a href="/admin/delete/{{ $posts->id }}"><button class="btn btn-danger">Hapus</button></a>
                                 </td>
                             </tr>
                             @endforeach
