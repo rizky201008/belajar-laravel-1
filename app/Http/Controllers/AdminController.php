@@ -80,8 +80,10 @@ class AdminController extends Controller
         ]);
     }
     public function cupdate(Request $request, $id){
+        $slug = Str::slug($request->kategori);
         $category = Category::find($id);
-        $category->name = $request['name'];
+        $category->name = $request['kategori'];
+        $category->slug = $slug;
         $category->update();
     }
     public function cdelete($id){
@@ -95,8 +97,10 @@ class AdminController extends Controller
         ]);
     }
     public function cstore(Request $request){
+        $slug = Str::slug($request->kategori);
         $category = new Category;
-        $category->name = $request['name'];
+        $category->name = $request['kategori'];
+        $category->slug = $slug;
         $category->save();
     }
     public function login(){

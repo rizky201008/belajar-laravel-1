@@ -6,8 +6,8 @@
                 <div class="col-md-5">
                     <form action="" method="post">
                         @csrf
-                        <label for="nama">Nama Kategori</label>
-                        <input type="text" name="kategori">
+                        <label for="nama" class="form-label">Nama Kategori</label>
+                        <input type="text" name="kategori" class="form-control mb-3">
                         <button class="btn btn-primary w-100" type="submit">Tambah</button>
                     </form>
                 </div>
