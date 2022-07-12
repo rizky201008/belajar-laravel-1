@@ -1,4 +1,4 @@
-@extends('admin.main')
+@extends('layout.main')
 @section('content')
     <section>
         <div class="container">
@@ -26,8 +26,8 @@
                                 <td>{{ $posts->excerpt }}</td>
                                 <td>{{ $posts->category->name }}</td>
                                 <td>
-                                        <a href="/admin/edit/{{ $posts->id }}"><button class="btn btn-primary">Edit</button></a>
-                                        <a href="/admin/delete/{{ $posts->id }}"><button class="btn btn-danger">Hapus</button></a>
+                                        <a href="/admin/posts/edit/{{ $posts->id }}"><button class="btn btn-primary">Edit</button></a>
+                                        <a href="/admin/posts/delete/{{ $posts->id }}"><button class="btn btn-danger">Hapus</button></a>
                                 </td>
                             </tr>
                             @endforeach

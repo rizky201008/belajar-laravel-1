@@ -1,4 +1,4 @@
-@extends('admin.main')
+@extends('layout.main')
 @section('content')
     <section>
         <div class="container">
@@ -15,17 +15,32 @@
                         <label for="title" class="form-label">Judul</label>
                         <input type="text" class="form-control mb-3 @error('title') is-invalid @enderror" name="title"
                             id="title">
+                        @error('title')
+                            <div class="invalid-feedback mb-3">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         <label for="catid" class="form-label">Kategori</label>
                         <select class="form-select @error('catid') is-invalid @enderror mb-3" name="catid">
                             @foreach ($category as $categories)
-                            <option value="{{ $categories->id }}">{{ $categories->name }}</option>
+                                <option value="{{ $categories->id }}">{{ $categories->name }}</option>
                             @endforeach
                         </select>
                         <label for="ecpt" class="form-label">Excerpt</label>
                         <input type="text" class="form-control mb-3 @error('ecpt') is-invalid @enderror" name="ecpt"
                             id="ecpt" placeholder="Masukkan teks singkat tentang artikel anda">
+                        @error('ecpt')
+                            <div class="invalid-feedback mb-3">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         <label for="body" class="form-label">Isi Artikel</label>
                         <textarea name="body" id="body" class="form-control @error('body') is-invalid @enderror"></textarea>
+                        @error('body')
+                            <div class="invalid-feedback mb-3">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         <button type="submit" class="btn btn-primary w-100 mt-3">Posting</button>
                     </form>
                 </div>
