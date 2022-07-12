@@ -10,9 +10,10 @@ class MainController extends Controller
 {
     public function home()
     {
+        $post = Post::all()->shortDesc();
         return view('home', [
             'title' => 'Home',
-            'posts' => Post::all()->sortDesc()
+            'posts' => $post
         ]);
     }
 }
