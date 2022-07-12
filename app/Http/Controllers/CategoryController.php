@@ -13,7 +13,7 @@ class CategoryController extends Controller
     {
         //menampilkan detail data 
         // find(), pluck()
-        return view('categories', [
+        return view('category.categories', [
             'categories' => Category::all(),
             'title' => 'Kategori'
         ]);
@@ -22,7 +22,7 @@ class CategoryController extends Controller
     {
         //menampilkan detail data 
         // find(), pluck()
-        return view('category', [
+        return view('category.category', [
             'category' => Category::with('post')->where('slug', '=', $slug)->first(),
             'title' => 'Kategori'
         ]);

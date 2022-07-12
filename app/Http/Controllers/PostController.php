@@ -10,7 +10,7 @@ use Illuminate\Routing\Controller;
 class PostController extends Controller
 {
     public function index(){
-        return view('posts', [
+        return view('post.posts', [
             'title' => 'Blog',
             'posts' => Post::all()
         ]);
@@ -19,7 +19,7 @@ class PostController extends Controller
     public function show($slug){
         //menampilkan detail data 
         // find(), pluck()
-        return view('post', [
+        return view('post.post', [
             'post' => Post::with('category')->where('slug','=',$slug)->first(),
             'title' => 'Baca Berita'            
         ]);
