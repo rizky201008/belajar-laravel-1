@@ -10,7 +10,7 @@ class MainController extends Controller
 {
     public function home()
     {
-        $post = Post::all()->shortDesc();
+        $post = Post::all();
         return view('home', [
             'title' => 'Home',
             'posts' => $post
