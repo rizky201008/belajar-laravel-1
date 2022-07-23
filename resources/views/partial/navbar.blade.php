@@ -9,7 +9,7 @@
       <ul class="navbar-nav ms-auto">
         @auth
         <li class="nav-item">
-          <a class="nav-link {{ ($title === "Home") ? 'active' : '' }}" href="/admin">Buat Post</a>
+          <a class="nav-link {{ ($title === "Tulis Artikel") ? 'active' : '' }}" href="/admin">Buat Post</a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ ($title === "Blog") ? 'active' : '' }}" href="/admin/posts">Post</a>
